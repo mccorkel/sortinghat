@@ -168,7 +168,7 @@ function App() {
     const house = houses[result as keyof typeof houses];
     const characteristic = characteristicMap[result as keyof typeof characteristicMap];
     
-    const shareText = `I've been sorted into the ${house.name} house at Gauntlet AI! ${characteristic}\n\nTake the quiz to discover your house:`;
+    const shareText = `I've been sorted into the ${house.name} house at Gauntlet AI!\n\nTake the quiz to discover your house:`;
     const shareUrl = `https://sortinghat.tigerpanda.tv/results/${house.name.toLowerCase()}.html`;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
     window.open(twitterUrl, "_blank", "width=600,height=400");
