@@ -5,13 +5,84 @@
     <title>You're a Vanguard at Gauntlet AI!</title>
     <!-- Twitter Card metadata -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="I'm in the Vanguard house at Gauntlet AI!" />
+    <meta name="twitter:title" content="I'm in the Vanguard house at Gauntlet AI! 🌈" />
     <meta name="twitter:description" content="Take the quiz to discover your house at Gauntlet AI!" />
     <meta name="twitter:image" content="https://sortinghat.tigerpanda.tv/vanguard.png" />
     <meta name="twitter:site" content="@gauntletai" />
-    <meta http-equiv="refresh" content="0;url=/" />
+    <link rel="stylesheet" href="/src/App.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        padding: 2rem;
+        color: #2d3748;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .result {
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      h2 {
+        color: #2d3748;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+      
+      img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: linear-gradient(45deg, #4299e1, #3182ce);
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        transition: all 0.3s ease;
+      }
+      
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+      }
+    </style>
   </head>
   <body>
-    <p>Redirecting to quiz...</p>
+    <main class="container">
+      <div class="result">
+        <h2>Your dominant characteristic is 🌈 Gay!<br>
+        Welcome to your new house, the Vanguard</h2>
+        <img src="/vanguard.png" alt="Vanguard house">
+        <br>
+        <a href="/" class="button">Take the Quiz Again</a>
+      </div>
+    </main>
   </body>
 </html> 
