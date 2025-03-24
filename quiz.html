@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauntle AI House Sorting Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .question {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .question p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        label {
+            display: block;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        label:hover {
+            background: #edf2f7;
+        }
+
+        input[type="radio"] {
+            margin-right: 0.75rem;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-top: 2rem;
+        }
+
+        button:hover {
+            background: #3182ce;
+        }
+
+        #result {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #result h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        #result img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .characteristic {
+            display: inline-block;
+            background: #edf2f7;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0.5rem 0;
+        }
+
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.2s ease;
+        }
+
+        .share-button:hover {
+            background: #1a1a1a;
+        }
+
+        .share-button svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+        }
+
+        code {
+            background: #edf2f7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gauntlet AI House Sorting Quiz</h1>
+        <p id="introText" style="text-align: center; margin-bottom: 2rem;">Answer these 10 questions to find your house at Gauntlet AI!</p>
+
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. How do you kick off a coding sprint?</p>
+                <label><input type="radio" name="q1" value="furry"> Yip excitedly while imagining yourself as a cyber-wolf.</label><br>
+                <label><input type="radio" name="q1" value="autistic"> Spend 45 minutes aligning your IDE tabs to exactly 4 spaces.</label><br>
+                <label><input type="radio" name="q1" value="gay"> Blast RuPaul's "Sissy That Walk" for inspiration.</label><br>
+                <label><input type="radio" name="q1" value="mormon"> Say a quick prayer for bug-free code and start typing.</label><br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Favorite prototyping tool:</p>
+                <label><input type="radio" name="q2" value="mormon"> A whiteboard blessed with dry-erase markers and good intentions.</label><br>
+                <label><input type="radio" name="q2" value="furry"> Blender, so you can 3D-print a furry avatar mid-sprint.</label><br>
+                <label><input type="radio" name="q2" value="autistic"> VS Code with 17 extensions for maximum efficiency, no lag allowed.</label><br>
+                <label><input type="radio" name="q2" value="gay"> Figma, because it's as fabulous as your wireframes.</label><br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Your reaction to a crashing prototype:</p>
+                <label><input type="radio" name="q3" value="autistic"> "I've already identified the error in line 42, column 6."</label><br>
+                <label><input type="radio" name="q3" value="gay"> "Werk it, we'll pivot to something fiercer!"</label><br>
+                <label><input type="radio" name="q3" value="mormon"> "Let's stay calm and debug this as a team."</label><br>
+                <label><input type="radio" name="q3" value="furry"> *growls at the screen, then scratches behind imaginary ears*</label><br>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Favorite Austin hangout after a late-night coding session:</p>
+                <label><input type="radio" name="q4" value="furry"> Zilker Park to run around like a wild animal.</label><br>
+                <label><input type="radio" name="q4" value="mormon"> A quiet café with herbal tea and no loud music.</label><br>
+                <label><input type="radio" name="q4" value="gay"> Rainey Street for glittery vibes and craft cocktails.</label><br>
+                <label><input type="radio" name="q4" value="autistic"> The exact same desk, because leaving disrupts your workflow.</label><br>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. How do you name your variables?</p>
+                <label><input type="radio" name="q5" value="autistic"> <code>var_001</code>, <code>var_002</code>, in strict sequential order.</label><br>
+                <label><input type="radio" name="q5" value="furry"> <code>pawsomeTail</code> and <code>furrySpeed</code>.</label><br>
+                <label><input type="radio" name="q5" value="gay"> <code>slayQueenX</code> and <code>fierceDivY</code>.</label><br>
+                <label><input type="radio" name="q5" value="mormon"> <code>blessedInt</code> and <code>righteousStr</code>.</label><br>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Your AI chatbot's personality would be:</p>
+                <label><input type="radio" name="q6" value="mormon"> A polite helper quoting wisdom from old tech manuals.</label><br>
+                <label><input type="radio" name="q6" value="autistic"> A literal machine giving precise, unembellished answers.</label><br>
+                <label><input type="radio" name="q6" value="furry"> A playful pup who responds with barks and emojis.</label><br>
+                <label><input type="radio" name="q6" value="gay"> A sassy diva who throws shade at bad inputs.</label><br>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Favorite rapid prototyping snack in Austin:</p>
+                <label><input type="radio" name="q7" value="gay"> Torchy's Tacos with extra rainbow salsa.</label><br>
+                <label><input type="radio" name="q7" value="autistic"> Exactly 12 unsalted almonds, counted twice.</label><br>
+                <label><input type="radio" name="q7" value="mormon"> Homemade granola bars from a family recipe.</label><br>
+                <label><input type="radio" name="q7" value="furry"> Beef jerky you pretend to hunt near Barton Springs.</label><br>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. How do you celebrate a successful demo?</p>
+                <label><input type="radio" name="q8" value="furry"> Howl at the moon from the rooftop of the Arena.</label><br>
+                <label><input type="radio" name="q8" value="gay"> Pop a bottle of sparkling cider and vogue in the lab.</label><br>
+                <label><input type="radio" name="q8" value="autistic"> Silently nod, then optimize the code 3% more.</label><br>
+                <label><input type="radio" name="q8" value="mormon"> Share a wholesome "great job" with the team and a high-five.</label><br>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Your laptop sticker vibe:</p>
+                <label><input type="radio" name="q9" value="mormon"> "Faith in Functions" in elegant script.</label><br>
+                <label><input type="radio" name="q9" value="gay"> Glittery unicorns and "Code Like a Queen."</label><br>
+                <label><input type="radio" name="q9" value="furry"> Paw prints and a snarling fox in a headset.</label><br>
+                <label><input type="radio" name="q9" value="autistic"> No stickers—scratches disrupt the surface tension.</label><br>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Favorite way to unwind during a hackathon break:</p>
+                <label><input type="radio" name="q10" value="autistic"> Reorganize your desk so every cable is parallel.</label><br>
+                <label><input type="radio" name="q10" value="mormon"> Meditate on the ethics of AI with a warm drink.</label><br>
+                <label><input type="radio" name="q10" value="furry"> Sketch a furry OC in a notebook with a bushy tail.</label><br>
+                <label><input type="radio" name="q10" value="gay"> Scroll X for the latest Austin drag show updates.</label><br>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const houses = {
+            gay: { name: "Vanguard", image: "vanguard.png" },
+            mormon: { name: "Innovators", image: "innovator.png" },
+            furry: { name: "Catalysts", image: "catalyst.png" },
+            autistic: { name: "Alchemists", image: "alchemist.png" }
+        };
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Validate all questions are answered
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    alert("Please answer all questions.");
+                    return;
+                }
+            }
+
+            // Count answers
+            const counts = { gay: 0, mormon: 0, furry: 0, autistic: 0 };
+            for (let i = 1; i <= 10; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`).value;
+                counts[answer]++;
+            }
+
+            // Find the dominant characteristic
+            let maxCount = 0;
+            let dominantCharacteristic = "gay"; // Default in case of tie
+            for (const [char, count] of Object.entries(counts)) {
+                if (count > maxCount) {
+                    maxCount = count;
+                    dominantCharacteristic = char;
+                }
+            }
+
+            // Display result
+            const house = houses[dominantCharacteristic];
+            const resultDiv = document.getElementById("result");
+            const characteristicMap = {
+                gay: "🌈 Gay",
+                mormon: "🙏 Mormon",
+                furry: "🐺 Furry",
+                autistic: "🧮 Autistic"
+            };
+            const shareText = `I've been sorted into the ${house.name} house at Gauntlet AI! 🎓 Take the quiz to discover your house!`;
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=https://sortinghat.tigerpanda.tv`;
+            
+            resultDiv.innerHTML = `
+                <h2>Your dominant characteristic is ${characteristicMap[dominantCharacteristic]}!<br>Welcome to your new house, the ${house.name}</h2>
+                <img src="${house.image}" alt="${house.name} House">
+                <p>Thank you for taking the quiz.</p>
+                <a href="${shareUrl}" target="_blank" class="share-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    Share on X
+                </a>
+            `;
+            resultDiv.style.display = "block";
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("introText").style.display = "none";
+        });
+    </script>
+</body>
+</html>
